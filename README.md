@@ -1,7 +1,7 @@
 neoism - Neo4j client for Go
 ===========================
 
-![Neoism Logo](https://raw.github.com/jmcvetta/neoism/master/neoism.png)
+![Neoism Logo](https://raw.github.com/Financial-Times/neoism/v2/neoism.png)
 
 Package `neoism` is a [Go](http://golang.org) client library providing access to
 the [Neo4j](http://www.neo4j.org) graph database via its REST API.
@@ -9,12 +9,8 @@ the [Neo4j](http://www.neo4j.org) graph database via its REST API.
 
 # Status
 
-| System    | Status                                                                                                                  |
-|-----------|:-----------------------------------------------------------------------------------------------------------------------:|
-| Travis CI | [![Travis CI](https://travis-ci.org/jmcvetta/neoism.png?branch=master)](https://travis-ci.org/jmcvetta/neoism)          |
-| CircleCI  | [![CircleCI](https://circleci.com/gh/jmcvetta/neoism.svg?style=svg)](https://circleci.com/gh/jmcvetta/neoism)           | 
-| Coveralls | [![Coveralls](https://img.shields.io/coveralls/jmcvetta/neoism/master.svg)](https://coveralls.io/r/jmcvetta/neoism)     |
-| Codecov   | [![Codecov](https://img.shields.io/codecov/c/github/jmcvetta/neoism/master.svg)](https://codecov.io/gh/jmcvetta/neoism) |
+[![CircleCI](https://circleci.com/gh/Financial-Times/neoism.svg?style=svg&circle-token=134cb89533b5bb5fcf1da4dc7c69a648289e9fbf)](https://circleci.com/gh/Financial-Times/neoism)
+[![Coveralls](https://coveralls.io/repos/github/Financial-Times/neoism/badge.svg?branch=v2)](https://coveralls.io/github/Financial-Times/neoism?branch=v2)
 
 This driver is fairly complete, and may now be suitable for general use.  The
 code has an extensive set of integration tests, but little real-world testing.
@@ -23,37 +19,25 @@ YMMV; use in production at your own risk.
 
 # Requirements
 
-[Go 1.1](http://golang.org/doc/go1.1) or later is required.
+[Go 1.13](http://golang.org/doc/go1.13) or later is required.
 
-Tested against Neo4j 2.2.4 and Go 1.4.1.
+Tested against Neo4j 3.4.0.
 
 
 # Installation
 
-## Development
+This Neoism uses go modules for versioning   
+
+Current release is `v2`
 
 ```
-go get -v github.com/jmcvetta/neoism
-```
-
-
-## Stable
-
-Neoism is versioned using [`gopkg.in`](http://gopkg.in).  
-
-Current release is `v1`
-
-```
-go get gopkg.in/jmcvetta/neoism.v1
+go get github.com/Financial-Times/neoism/v2
 ```
 
 
 # Documentation
 
-See [GoDoc](http://godoc.org/github.com/jmcvetta/neoism) or
-[Go Walker](http://gowalker.org/github.com/jmcvetta/neoism) for 
-automatically generated documentation.
-
+See [GoDev](https://pkg.go.dev/github.com/Financial-Times/neoism) for automatically generated documentation.
 
 # Usage
 
@@ -175,15 +159,6 @@ docker-compose -f docker-compose-tests.yml up -d --build && \
 docker logs -f test-runner && \
 docker-compose -f docker-compose-tests.yml down -v
 ```
-
-If you are using a fresh untouched Neo4j instance, you can use the included
-`set_neo4j_password.sh` script to set the password to that expected by Neoism's
-tests:
-
-```bash
-sh set_neo4j_password.sh
-```
-
 
 # Support
 
