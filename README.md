@@ -171,8 +171,9 @@ variable.  By default it assumes Neo4j is running on `localhost:7474`, with
 username `neo4j` and password `foobar`.  
 
 ```bash
-export NEO4J_URL=http://your_user:your_password@neo4j.yourdomain.com/db/data/
-go test -v .
+docker-compose -f docker-compose-tests.yml up -d --build && \
+docker logs -f test-runner && \
+docker-compose -f docker-compose-tests.yml down -v
 ```
 
 If you are using a fresh untouched Neo4j instance, you can use the included
